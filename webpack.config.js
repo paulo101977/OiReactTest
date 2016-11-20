@@ -34,7 +34,7 @@ function buildConfig(wantedEnv) {
   //the configuration below resolves any problem in loaders
   config.module= {
     loaders: [
-        {
+        /*{
             test: /\.jsx?$/,
             loader: 'babel',
             exclude: /node_modules/,
@@ -42,6 +42,16 @@ function buildConfig(wantedEnv) {
               cacheDirectory: true,
               presets: ['react', 'es2015']
             }
+        },*/
+        {
+            test: /(\.jsx|\.js)$/,
+            loader: 'babel',
+            exclude: /(node_modules|bower_components)/
+        },
+        {
+            test: /(\.jsx|\.js)$/,
+            loader: "eslint-loader",
+            exclude: /node_modules/
         },
         { test: /\.css$/, loader: "style-loader!css-loader" },
         { test: /\.png$/, loader: "url-loader?limit=100000" },
