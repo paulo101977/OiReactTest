@@ -10,9 +10,10 @@ class AppComponent extends React.Component {
       super(props)
   }
   getComponent(name){
-      var Factory = new ComponentFactory().getComponent(name)
+      var props = {child : "text"}
+      var Factory = new ComponentFactory().getComponent(name,props)
       console.dir(Factory);
-      return <div> Text </div>
+      return Factory
   }
   render() {
     return (
