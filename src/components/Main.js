@@ -4,15 +4,14 @@ require('../styles/App.css');
 import React from 'react';
 import ComponentFactory from '../logic/ComponentFactory'
 
-let yeomanImage = require('../images/yeoman.png');
 
 class AppComponent extends React.Component {
   constructor(props){
       super(props)
-      console.dir('inside')
   }
   getComponent(name){
-      let Factory = new ComponentFactory().getComponent('div')
+      var Factory = new ComponentFactory().getComponent(name)
+      console.dir(Factory);
       return <div> Text </div>
   }
   render() {
